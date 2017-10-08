@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>动态创建一个HTML元素</title>
+    <script src="../jquery-3.2.1.js"></script>
+</head>
+<body>
+    <p id="main">一个自带HTML元素</p>
+    <script>
+        //创建HTML内容多最easy选择：有没有点vue和react多影子？
+        $("<p> 这个是新创建的</p>").insertAfter("#main");
+
+        //下面多玩法是直接创建一个全功能的<img>元素
+        $("<img>",{
+            src: './jqisbb1.jpeg',
+            alt : 'one test.',
+            title : 'This is One ALERT!',
+            click : function(){
+                alert($(this).attr('title'));
+            }
+        })
+        .css({
+            cursor : 'pointer',
+            border : '1px solid red',
+            padding : '12px 12px 20px 12px',
+            backgroundColor : 'white'
+        })
+        .appendTo('body');
+    </script>
+</body>
+</html>
